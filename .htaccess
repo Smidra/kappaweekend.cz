@@ -2,4 +2,4 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^kappaweekend.cz [NC]
 RewriteRule ^(.*)$ http://www.kappaweekend.cz/$1 [L,R=301]
 RewriteCond %{HTTP_HOST} ^https://kappaweekend.cz [NC]
-RewriteRule ^(.*)$ http://www.kappaweekend.cz/$1 [L,R=301]
+RewriteRule ^(.*)$ https://www.kappaweekend.cz/$1 [L,R=301]
