@@ -1,12 +1,22 @@
 /* CSS Document */
 
 body {
-  background: linear-gradient(to right top, #26235Bcc, #812878cc, #A22160cc, #CC2336cc, #E4682Acc, #F69824cc) no-repeat top left fixed, url("back_web_2.jpg") no-repeat top left fixed;
+  background: linear-gradient(
+        to right top,
+        #26235bcc,
+        #812878cc,
+        #a22160cc,
+        #cc2336cc,
+        #e4682acc,
+        #f69824cc
+      )
+      no-repeat top left fixed,
+    url('back_web_3.jpg') no-repeat top left fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   min-height: 100%;
   height: 100vh;
 }
@@ -203,7 +213,7 @@ h1 {
     color-stop(1, #0953a8)
   );
   background: -moz-linear-gradient(top, #4574a9 5%, #2c5079 100%);
-  background: -webkit-linear-gradient(top,#4574a9 5%, #2c5079 100%);
+  background: -webkit-linear-gradient(top, #4574a9 5%, #2c5079 100%);
   background: -o-linear-gradient(top, #4574a9 5%, #2c5079 100%);
   background: -ms-linear-gradient(top, #4574a9 5%, #2c5079 100%);
   background: linear-gradient(to bottom, #3e6b9a 5%, #2c5079 100%);
@@ -232,7 +242,7 @@ h1 {
   );
   box-shadow: inset 0px 1px 0px 0px #3d5a70;
   background: -moz-linear-gradient(top, #1f4d82 5%, #2d5788 100%);
-  background: -webkit-linear-gradient(top,  #1f4d82 5%, #2d5788 100%);
+  background: -webkit-linear-gradient(top, #1f4d82 5%, #2d5788 100%);
   background: -o-linear-gradient(top, #1f4d82 5%, #2d5788 100%);
   background: linear-gradient(to bottom, #1f4d82 5%, #2d5788 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0953a8', endColorstr='#0377c4',GradientType=0);
@@ -249,9 +259,10 @@ h1 {
 }
 
 .transparent {
-    display: none;
+  display: none;
 }
-.cookiebar.cookiebar-dark .cookiebar-buttons button, .cookiebar.cookiebar-dark .cookiebar-moreinfo button {
+.cookiebar.cookiebar-dark .cookiebar-buttons button,
+.cookiebar.cookiebar-dark .cookiebar-moreinfo button {
   margin-top: 0.5em !important;
   border-radius: 25px !important;
   padding: 1px 12px !important;
