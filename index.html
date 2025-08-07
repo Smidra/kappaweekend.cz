@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
@@ -49,17 +50,17 @@
            <p>
              <br/>
            <br/>
-           <h2>Osmá Kappa je u konce, byli jste skvělí!<br>
-              Devátá Kappa se blíží!<br>
+           <h2>Devátá Kappa se blíží<br>
+              už od 19. do 21. září!<br>
 
     </h2>
-
       <h3>
-        <a href="https://photos.app.goo.gl/5NCTbjQXDfnGA2fd8" target="_blank" class="myButton">
-          <i class="fa fa-camera buttonIcon"></i>Aktuální fotky
+        <a href="form.html" class="myButton">
+         <i class="fa fa-sign-in"></i>
+      </i>Přihlášení
         </a>
       </h3>
-      <br/>
+
 
 
       ________________________________________________________________________________
@@ -91,9 +92,13 @@
         <h3>
           Přihlašování uzavřeno
         </h3>  -->
+
       </p>
       ________________________________________________________________________________
 
+
+
+      
       <br /><br />
 
       <h3>
@@ -120,11 +125,15 @@
     <div class="push"></div>
   </div>
 
-  <div class="footer doNotRemove">
-    <p class="small">
-      Kappa weekend organizuje neformální skupina mládežníků pod záštitou <a href="http://www.semcr.cz/" target="_blank">SEM z.s. - Sdružení Evangelické Mládeže</a>. <br/>Kontakt: tony(zavinac)kappaweekend.cz
-    </p>
-  </div>
+<!-- ======= Patka stránky ======= -->
+<div class="footer doNotRemove" id="footer-placeholder"></div>
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
 
 </body>
 

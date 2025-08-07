@@ -107,7 +107,7 @@
         Co je Kappa
       </h2>
       <p>Kappa je akční víkendová akce pro mladší mládež ve věku 13 - 16 let.
-        <p />
+      </p>
       <p>Během víkendu střídáme bloky poměrně náročných aktivit s klidnějším programem.
       </p>
       <p>Chceme mládežníky seznamovat s tématy, které se nevejdou do seniorátek, biblických hodin a někdy ani do školní
@@ -126,7 +126,7 @@
         Co Kappa není
       </h2>
       <p>Tábor pro děti. Seniorátky. Odpočinková akce.
-        <p />
+      </p>
 
         ____________________________________________________________________________________
 
@@ -143,13 +143,13 @@
         účasti řekl svým rodičům.</p>
 
       <h3>Moji rodiče se bojí, že XYZ.</h3>
-      <p>V pořádku. Ať nám napíšou XYZ na email <b>tony(zavinac)kappaweekend.cz</b>, domluvíme
+      <p>V pořádku. Ať nám napíšou XYZ na email <b>hartels@natur.cuni.cz</b>, domluvíme
         se s nimi a všechno vysvětlíme. Napsat nám můžeš samozřejmě i ty sám.</p>
 
       <h3>Kdo Kappu pořádá?</h3>
-      <p>Za šestým ročníkem Kappy stojí Ráchel, Tony, Ráďa, Dora, Dan a Janča. Jsme neformální skupina mládežníků z
-        jihočeského a pražského seniorátu. Směs středoškoláků, vysokoškoláků a pracujících. Obvykle s námi
-        spolupracuje farář podle místa, kam se vypravíme.
+      <p>Za devátým ročníkem Kappy stojí Šimon, Štěpán, Marek a spol. Jsme neformální skupina mládežníků z
+        jihočeského a pražského seniorátu. Směs středoškoláků, vysokoškoláků a pracujících. <!--Obvykle s námi
+        spolupracuje farář podle místa, kam se vypravíme. -->
       </p>
       <p>Akci organizujeme
         pod záštitou <a href="http://www.semcr.cz/" target="_blank">SEM z.s. - Sdružení Evangelické Mládeže</a>.</p>
@@ -176,8 +176,7 @@
         </a>
       </h3> -->
 
-      <br />
-      <br />
+   
       <h3><a href="index.html" class="myButtonBlue">zpět</a></h3>
       <br />
       <br /> <br />
@@ -186,14 +185,15 @@
     <div class="push"></div>
   </div>
 
-  <div class="footer doNotRemove">
-    <article>
-      ____________________________________________________________________________________
-    </article>
-    <p class="small">
-      Kappa weekend organizuje neformální skupina mládežníků pod záštitou <a href="http://www.semcr.cz/" target="_blank">SEM z.s. - Sdružení Evangelické Mládeže</a>. <br/>Kontakt: tony(zavinac)kappaweekend.cz
-    </p>
-  </div>
+<!-- ======= Patka stránky ======= -->
+<div class="footer doNotRemove" id="footer-placeholder"></div>
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
 
 
 </body>
