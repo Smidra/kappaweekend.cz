@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;subset=latin-ext" rel="stylesheet">
+  <script src="./cleanUpThePage.js"></script>
+<script src="https://use.fontawesome.com/e3ff3e247b.js"></script>
+<link rel="icon" type="image/png" href="favicon.png">
+
+  <title>Kappa login </title>
+</head>
+
+<body>
+
+
+<div class="wrapper doNotRemove">
+
+    <header>
+      <img src="logo2.png" id="head">
+    </header>
+
+  <article>
+    <h2>
+        Přihlášení
+      </h2>
+      <p>Zde se můžeš přihlásit.
+
+<h6> Kolonky s hvězdičkou jsou vyžadovány</h6>
+
+
+
+<form id="myForm" class="doNotRemove">
+<input name="jmeno"  placeholder="Jméno a příjmení*"  required>
+<input type="email" name="email"  placeholder="Email*" required>
+<input type="tel" name="telefon" placeholder="Telefonní číslo*" pattern="\+?[0-9\s\-]{9,}" required>
+<input type="tel" name="telefonParen" placeholder="Telefonní číslo na rodiče*" pattern="\+?[0-9\s\-]{9,}" required>
+<input type="number" name="age" placeholder="Věk v průběhu akce*" min="13" max="16" required>
+<input name="diet" placeholder="Diety" >
+<input name="restriction" placeholder="Zdravotní omezení" >
+<input name="note" placeholder="Poznámky" >
+<label>
+  <input  name="escort" type="checkbox" value="1">
+ Ocením v Praze na hlavním nádraží doprovod
+</label>
+
+
+<label>
+<input name="souhlas" type="checkbox" id="consent" value="on">
+ Souhlasím s pořizováním fotografií a jejich použitím*
+  </label>
+
+
+<h3>
+  <button type="submit" class="noButton" id="souhlasButton" >
+<span><i class="fa fa-lock" style="margin-right: 5px;" id="souhlasButton2"></i> Přihlásit</span>
+
+  </button>
+
+</h3></form>
+
+
+
+
+<div id="vysledek"></div>
+   <h3><a href="index.html" class="myButtonBlue">zpět</a></h3>
+<br>
+<br>
+<br>
+</article>
+
+</div>
+
+
+
+<!-- ========== JavaScript ========== -->
+<script>
+  // Získání prvků z DOM
+  const checkbox = document.getElementById('consent');            // Checkbox souhlasu
+  const button = document.getElementById('souhlasButton');        // Tlačítko odeslání
+  const icon = document.getElementById('souhlasButton2');         // Ikona uvnitř tlačítka
+
+  // Reakce na změnu checkboxu (souhlas s focením)
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      // Aktivace tlačítka a změna ikony na "sign-in"
+      button.classList.remove('noButton');
+      button.classList.add('myButton');
+      icon.className = "fa fa-sign-in";
+    } else {
+      // Deaktivace tlačítka a vrácení ikony na "lock"
+      button.classList.remove('myButton');
+      button.classList.add('noButton');
+      icon.className = "fa fa-lock";
+    }
+  });
+</script>
+
+<script>
+  // Zpracování odeslání formuláře
+  document.getElementById('myForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Zabrání klasickému odeslání formuláře
+
+    const formData = new FormData(this); // Vytvoření dat z formuláře
+
+    fetch('https://lukas.regularspace.com/kappa/prijem.php', {
+      method: 'POST',
+      body: formData,
+      mode: 'cors' // Pokud server podporuje CORS
+    })
+.then(response => {
+  if (!response.ok) return response.text().then(text => { throw new Error(text); });
+  return response.text();
+})
+.then(data => {
+  // Pokud server vrátí "OK"
+  if (data === 'OK') {
+    document.getElementById('vysledek').innerText = 'Úspěšně odesláno';
+    document.getElementById('myForm').reset();
+    button.classList.remove('myButton');
+    button.classList.add('noButton');
+    icon.className = "fa fa-lock";
+  } else {
+    // Jiná zpráva, kterou server poslal
+    document.getElementById('vysledek').innerText = data;
+  }
+})
+.catch(error => {
+  // Zde je chyba (server poslal error, nebo fetch selhal)
+  document.getElementById('vysledek').innerText = error.message || 'Chyba při odesílání';
+});
+
+  });
+
+  // Po načtení stránky zruší zaškrtnutí checkboxu
+  window.addEventListener('load', () => {
+    document.getElementById('consent').checked = false;
+  });
+</script>
+<br>
+<!-- ======= Patka stránky ======= -->
+<div class="footer doNotRemove" id="footer-placeholder"></div>
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
+
+</body>
+</html>
