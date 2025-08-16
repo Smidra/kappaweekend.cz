@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;subset=latin-ext" rel="stylesheet">
+
+  <script src="./cleanUpThePage.js"></script>
+
+  <title>Kappa historie</title>
+</head>
+
+<body>
+
+
+
+  <div class="wrapper doNotRemove">
+
+    <header>
+      <img src="logo-h.png" id="head">
+    </header>
+
+    <article>
+        <div class="main-container">
+            <div class="info-column">
+                <h2>Kdo Kappu chystá?</h2>
+                <p>
+                Ahoj, zajímalo by vás, kdo nadcházející Kappu chystá? Pokud ano, zde máte odpověď.
+                </p>
+            </div>
+
+            <div class="organizer-container">
+                <div class="organizer-card">
+                    <div class="photo-column">
+                    <img src="organizers/marek.jpeg" alt="Marek Photo" class="organizer-photo">
+                    </div>
+                    <div class="text-column">
+                    <div class="name-highlight">
+                        <h3 class="organizer-name">Marek Nadrchal</h3>
+                    </div>
+                    <p class="organizer-bio">
+                        Ahoj, já jsem Marek. Studuji, vedu skauty a když jsem unavený, začnu lidi kolem sebe učit matematiku . Organizuji Kappu, protože je to akce, která se lidem vryje do paměti.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="organizer-card">
+                    <div class="photo-column">
+                    <img src="organizers/simon.jpeg" alt="Simon Photo" class="organizer-photo">
+                    </div>
+                    <div class="text-column">
+                    <div class="name-highlight">
+                        <h3 class="organizer-name">Šimon Domaška Härtel</h3>
+                    </div>
+                    <p class="organizer-bio">
+                        Člen pražského SOM, student biologie a evangelického bohosloví, velmi amatérský hráč na piano a ještě amatérštější trumpetista. Kappu organizuji, protože jsem se jí rád účastnil a také jelikož jsem byl v hospodě, když se tam začala vymýšlet ta letošní.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="organizer-card">
+                    <div class="photo-column">
+                    <img src="organizers/verca.png" alt="Verca Photo" class="organizer-photo">
+                    </div>
+                    <div class="text-column">
+                    <div class="name-highlight">
+                        <h3 class="organizer-name">Verča Šotolová</h3>
+                    </div>
+                    <p class="organizer-bio">
+                         Jsem členkou Pražského SOMu  a taky vedoucí prvního turnusu tábora v Bělči. Studuju biologii. Mám ráda hudbu, ať už ve formě zpěvu nebo tance. Kappu organizuju, protože jsem se přes ni dostala do prostoru evangelické mládeže nad sborovou úroveň a chtěla bych, aby Kappa takhle dál otevírala dveře.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="organizer-card">
+                    <div class="photo-column">
+                    <img src="organizers/stepan.jpg" alt="Stepan Photo" class="organizer-photo">
+                    </div>
+                    <div class="text-column">
+                    <div class="name-highlight">
+                        <h3 class="organizer-name">Štěpán Turek</h3>
+                    </div>
+                    <p class="organizer-bio">
+                        Jsem bývalý člen Jihočeského SOMu. Studuji informatiku a mám rád sporty. Baví mě outdorové aktivity a hudba. Kappu organizuji, protože tahle akce je unikátní a skvělá.
+                    </p>
+                    </div>
+                </div>
+
+                  <div class="organizer-card">
+                    <div class="photo-column">
+                    <img src="organizers/david.jpg" alt="David Photo" class="organizer-photo">
+                    </div>
+                    <div class="text-column">
+                    <div class="name-highlight">
+                        <h3 class="organizer-name">David Nadrchal</h3>
+                    </div>
+                    <p class="organizer-bio">
+                        Rád dělám programy. Dříve hlavně pro skauty, teď jako student umělé inteligence spíše pro grafické karty. Kappu organizuji, protože je to jedinečná příležitost přivádět sebe i ostatní do nestadnardních situací.
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3><a href="index.html" class="myButtonBlue">zpět</a></h3>
+      <br />
+      <br /> <br />
+
+    </article>
+    <div class="push"></div>
+  </div>
+  <div class="footer doNotRemove">
+    <article>
+      ____________________________________________________________________________________
+    </article>
+    <p class="small">
+      Kappa weekend organizuje neformální skupina mládežníků pod záštitou <a href="http://www.semcr.cz/" target="_blank">SEM z.s. - Sdružení Evangelické Mládeže</a>. <br/>Kontakt: tony(zavinac)kappaweekend.cz
+    </p>
+  </div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
+</body>
+
+</html>
