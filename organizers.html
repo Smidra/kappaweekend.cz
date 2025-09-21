@@ -112,15 +112,10 @@
     </article>
     <div class="push"></div>
   </div>
-  <div class="footer doNotRemove">
-    <article>
-      ____________________________________________________________________________________
-    </article>
-    <p class="small">
-      Kappa weekend organizuje neformální skupina mládežníků pod záštitou <a href="http://www.semcr.cz/" target="_blank">SEM z.s. - Sdružení Evangelické Mládeže</a>. <br/>Kontakt: tony(zavinac)kappaweekend.cz
-    </p>
-  </div>
 
+
+<!-- ======= Patka stránky ======= -->
+<div class="footer doNotRemove" id="footer-placeholder"></div>
 <script>
   fetch('footer.html')
     .then(response => response.text())
@@ -128,6 +123,7 @@
       document.getElementById('footer-placeholder').innerHTML = data;
     });
 </script>
+
 </body>
 
 </html>
