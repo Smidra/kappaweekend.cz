@@ -339,11 +339,11 @@ h1 {
 
   .info-column {
     flex: 0 0 300px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
     color: black;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.3);
     position: fixed;
     left: 55vw;
     top: 20vh;
@@ -365,10 +365,10 @@ h1 {
     flex-direction: row;
     align-items: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 8px;
     width: 35vw;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* subtle shadow for better visual separation */
+    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.3); /* subtle shadow for better visual separation */
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 0.5s ease-out forwards;
@@ -378,6 +378,8 @@ h1 {
   .organizer-card:nth-child(3) { animation-delay: 0.2s; }
   .organizer-card:nth-child(4) { animation-delay: 0.3s; }
   .organizer-card:nth-child(5) { animation-delay: 0.4s; }
+  .organizer-card:nth-child(6) { animation-delay: 0.5s; }
+  .organizer-card:nth-child(7) { animation-delay: 0.6s; }
 
   .photo-column {
     flex: 0 0 auto;
@@ -414,7 +416,7 @@ h1 {
   }
 
   .name-highlight {
-    background-color: #e0e0e0;
+    background-color: #e0e0e063;
     padding: 5px 10px;
     border-radius: 4px;
     display: inline-block;
@@ -434,31 +436,40 @@ h1 {
   }
 
   /* Media Queries for Cell Phone */
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     .main-container {
-      flex-direction: column;
-      gap: 20px;
+    flex-direction: column;
+    gap: 30px; /* Větší mezera mezi sekcemi pro lepší čitelnost */
+    align-items: center; /* Vycentruje sloupce horizontálně */
+    padding: 20px; /* Bezpečný odstup od krajů obrazovky */
     }
 
     .info-column {
-      width: 80vw;
+      width: 100%; /* Využije plnou šířku kontejneru */
+      max-width: 800px; /* Ale neroztáhne se do nekonečna */
       flex: none;
       position: static; /* Unfix the block on mobile */
+      text-align: center;
+      padding: 0; /* Padding vyřešíme v main-containeru */
+      
     }
 
     .organizer-container {
-      gap: 20px;
-      padding: 0 20px;
-      margin-left: 15vw;
+    width: 100%; /* Využije plnou šířku kontejneru */
+      max-width: 800px; /* Ale neroztáhne se do nekonečna */
+      flex: none;
+      position: static; /* Unfix the block on mobile */
+      text-align: center;
+      padding: 0; /* Padding vyřešíme v main-containeru */
     }
 
     .organizer-card {
-      flex-direction: column; /* Stack photo and text vertically */
-      align-items: center;
-      width: 70vw;
-      margin-left: 10vw;
-      padding: 15px;
+   width: 100%; /* Využije plnou šířku kontejneru */
+      max-width: 800px; /* Ale neroztáhne se do nekonečna */
+      flex: none;
+      position: static; /* Unfix the block on mobile */
       text-align: center;
+      padding: 0; /* Padding vyřešíme v main-containeru */
     }
 
     .photo-column {
@@ -477,6 +488,8 @@ h1 {
 
     .organizer-bio {
       font-size: 0.9em;
+      align-items: center; /* Vycentruje sloupce horizontálně */
+    padding: 20px; /* Bezpečný odstup od krajů obrazovky */
     }
 
     .name-highlight {
